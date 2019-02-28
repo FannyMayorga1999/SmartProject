@@ -1,0 +1,81 @@
+<div class="main-content ">
+  <div class="container-fluid">
+    <div class="row">
+      <div class=" col-md-12">
+        <div class="card">
+          <div class="card-header card-header bg-dark">
+            <div class="py-5 text-left">
+              <div class="row">
+                <h2 class="card-title text-light">Proyecto 1</h2>
+                <button class="btn btn-link collapsed" aria-expanded="false" aria-controls="collapseThree">Editar
+                  perfil</button>
+              </div>
+              <p class="card-category text-muted">Objetivo: Aqui se mostrara el objetivo general del proyecto</p>
+              <p class="card-category text-muted">Progreso del proyecto:</p>
+              <div class="progress">
+                <div class="progress-bar bg-warning progress-bar-animated progress-bar-striped" role="progressbar"
+                  style="width: 60%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">60%</div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body table-responsive">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <div class="card" *ngFor="let proyecto of proyectos" >
+                        <div class="card-header card-header bg-dark">
+                            <h4 class="card-title text-light">{{proyecto.nombre}}</h4>
+                        </div>
+                        <div class="card-body table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <th>Nombre</th>
+                                    <th>Fecha Inicio</th>
+                                    <th>Fecha Fin</th>
+                                    <th>Recursoso</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{proyecto.nombre}}</td>
+                                        <td>{{proyecto.fechaComienzo}}</td>
+                                        <td>{{proyecto.fechaFinal}}</td>
+                                        <td>{{proyecto.costoProyecto}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+              <div class="col-lg-6 col-md-12">
+                  <div class="card" *ngFor="let proyecto of proyectos" >
+                      <div class="card-header card-header bg-dark">
+                          <h4 class="card-title text-light">{{proyecto.nombre}}</h4>
+                      </div>
+                      <div class="card-body table-responsive">
+                          <table class="table table-hover">
+                              <thead>
+                                  <th>Nombre</th>
+                                  <th>Fecha Inicio</th>
+                                  <th>Fecha Fin</th>
+                                  <th>Recursoso</th>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td>{{proyecto.nombre}}</td>
+                                      <td>{{proyecto.fechaComienzo}}</td>
+                                      <td>{{proyecto.fechaFinal}}</td>
+                                      <td>{{proyecto.costoProyecto}}</td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+  </div>
+</div>

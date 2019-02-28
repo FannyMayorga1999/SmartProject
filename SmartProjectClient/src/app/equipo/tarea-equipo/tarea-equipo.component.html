@@ -1,0 +1,203 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header bg-dark">
+            <h4 class="card-title text-light" *ngFor="let tarea of tareas">{{tarea.nombre}}
+            </h4>
+            <p class="card-category text-muted"> Divicion del proyecto en Tareas
+              <button data-toggle="modal" data-target="#EditarTareas" mat-raised-button type="submit"
+                class="btn btn-dark pull-right" >Edit</button>
+                <button data-toggle="modal" data-target="#NuevaTarea" mat-raised-button type="submit"
+                class="btn bnt-dark pull-right" >Nueva
+                Tareas</button>
+            </p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <th>
+                    ID
+                  </th>
+                  <th>
+                    Nombre de la Tarea
+                  </th>
+                  <th>
+                    Tarea Inicio
+                  </th>
+                  <th>
+                    Tarea Fin
+                  </th>
+                  <th>
+                    Prioridad
+                  </th>
+                  <th>
+                    Progreso
+                  </th>
+                  <th>
+                    Recurso
+                  </th>
+                  ;<th>
+                    Equipo
+                  </th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      {{tarea.id}}
+                    </td>
+                    <td>
+                      {{tarea.nombre}}
+                    </td>
+                    <td>
+                      {{tarea.fechaComienzo}}
+                    </td>
+                    <td>
+                      {{tarea.fechaFinal}}
+                    </td>
+                    <td class="text-danger">
+                      {{tarea.prioridad}}
+                    </td>
+                    <td>
+                      {{tarea.estado}}
+                    </td>
+                    <td>
+                      {{tarea.recurso}}
+                    </td>
+                    <td>
+                      {{tarea.idRol}}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+        <div class="modal fade center " id="EditarTareas" tabindex="-1" role="dialog"
+          aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div>
+              <div class="card">
+                <div class="card-header card-header bg-dark">
+                  <div class="card-header bg-dark">
+                    <h5 class="card-title text-light ">Editar Tarea</h5>
+                    <p class="card-category text-muted">Completar Tarea</p>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <form>
+                    <div class="row">
+                      <div class="col-md-5">
+                        <mat-form-field class="example-full-width">
+                          <!--disable ayuda a desavitilar un campa y poner si es necesario-->
+                          <input matInput placeholder="Equipo (disabled)" disabled>
+                        </mat-form-field>
+                      </div>
+                      <div class="col-md-3">
+                        <mat-form-field class="example-full-width">
+                          <input [(ngModel)]="tarea.nombre" matInput placeholder="Nombre Proyecto">
+                        </mat-form-field>
+                      </div>
+                      <div class="col-md-4">
+                        <mat-form-field class="example-full-width">
+                          <input [(ngModel)]="tarea.fechaComienzo" matInput type="date" placeholder="Fecha de Comienzo"
+                            type="date">
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <mat-form-field class="example-full-width">
+                          <input [(ngModel)]="tarea.fechaFinal" matInput placeholder="Fecha Final" type="date">
+                        </mat-form-field>
+                      </div>
+                      <div class="col-md-6">
+                        <mat-form-field class="example-full-width">
+                          <input [(ngModel)]="tarea.recurso" matInput placeholder="Recurso" type="text">
+                        </mat-form-field>
+                      </div>
+                      <div class="btn-toolbar pull-rigth " role="toolbar" aria-label="Toolbar with button groups">
+                        <button mat-raised-button type="submit" class="btn bnt-dark pull-right" (clic)="put(tarea)" >Editar</button>
+                        <button mat-raised-button type="submit"
+                          class="btn btn-danger pull-right close">Cancelar</button>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade center " id="NuevaTarea" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div>
+              <div class="card">
+                <div class="card-header card-header bg-dark">
+                  <div class="card-header bg-dark">
+                    <h5 class="card-title text-light ">Nueva Tarea</h5>
+                    <p class="card-category text-muted">Completar Perfil</p>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <form>
+                    <div class="row">
+                      <div class="col-md-5">
+                        <mat-form-field class="example-full-width">
+                          <!--disable ayuda a desavitilar un campa y poner si es necesario-->
+                          <input matInput placeholder="Equipo (disabled)" disabled>
+                        </mat-form-field>
+                      </div>
+                      <div class="col-md-3">
+                        <mat-form-field class="example-full-width">
+                          <input [(ngModel)]="tarea.nombre" matInput placeholder="Nombre Proyecto">
+                        </mat-form-field>
+                      </div>
+                      <div class="col-md-4">
+                        <mat-form-field class="example-full-width">
+                          <input [(ngModel)]="tarea.fechaComienzo" matInput type="date" placeholder="Fecha De Comienzo"
+                            type="date">
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <mat-form-field class="example-full-width">
+                          <input [(ngModel)]="tarea.fechaFinal" matInput placeholder="Fecha FInal" type="date">
+                        </mat-form-field>
+                      </div>
+                      <div class="col-md-6">
+                        <mat-form-field class="example-full-width">
+                          <input [(ngModel)]="tarea.recurso" matInput placeholder="Recurso" type="text">
+                        </mat-form-field>
+                      </div>
+                      <div class="col-md-6">
+                        <mat-form-field class="example-full-width">
+                          <input [(ngModel)]="tarea.estado" matInput placeholder="Estado" type="text">
+                        </mat-form-field>
+                      </div>
+                      <div class="col-md-6">
+                        <mat-form-field class="example-full-width">
+                          <input [(ngModel)]="tarea.prioridad" matInput placeholder="Prioridad" type="text">
+                        </mat-form-field>
+                      </div>
+                      
+                      <div class="btn-toolbar pull-rigth " role="toolbar" aria-label="Toolbar with button groups">
+                        <button mat-raised-button type="submit" class="btn bnt-dark pull-right" (clic)="post(tarea)">Aceptar</button>
+                        <button mat-raised-button type="submit"
+                          class="btn btn-danger pull-right close">Cancelar</button>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

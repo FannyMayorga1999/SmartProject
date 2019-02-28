@@ -1,0 +1,139 @@
+<div class="main-content ">
+    <div class="container-fluid">
+        <div class="row">
+            <div class=" col-md-12">
+                    <div class="card">
+                    <div class="card-header card-header bg-dark">
+                        <div class="py-5 text-center">
+                            <h2 class="card-title text-light">Perfil del Proyecto</h2>
+                            <p class="card-category text-muted">Manos a la obra!!! Empecemos creando el perfil de tu nuevo proyecto</p>
+                          </div>
+                    </div>
+                    <div class="card-body table-responsive">
+                        <div class="row">
+                            <div class="col-md-4 order-md-2 mb-4">
+
+                            </div>
+                            <div class="col-md-12 order-md-1">
+                              <h4 class="mb-3">Informacion del proyecto</h4>
+                              <form class="needs-validation" novalidate>
+                                <div class="row">
+                                  <div class="col-md-4 mb-3">
+                                    <label for="proyecto">Nombre del proyecto</label>
+                                    <input [(ngModel)]="proyecto.nombreProyecto"  type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                                  </div>
+                                  <div class="col-md-4 mb-3">
+                                    <label for="proyecto">Lider del proyecto</label>
+                                    <select class="custom-select d-block w-100" id="country" required>
+                                      <option value="">Elige...</option>
+                                      <option>Pepe Carlos Pilataxi Yunga</option>
+                                      <option>John Rambo</option>
+                                      <option>Ermenegildo Rocoto</option>
+                                      <option>Segundo Atuhualpa</option>
+                                    </select>
+                                  </div>
+                                </div>
+
+                                <hr>
+                                <h4 class="mb-3">Estudios del proyecto</h4>
+                                <div class="mb-3">
+                                  <label for="problema">Problema general o central</label>
+                                  <textarea class="form-control" rows="4" id="problema" placeholder="Brebe descripcion del problema"></textarea>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-md-6 mb-3">
+                                    <label for="problema">Justificación</label>
+                                    <textarea [(ngModel)]="proyecto.justificacion"  class="form-control" rows="4" id="justificacion" placeholder="Razon por la cual se empezo"></textarea>
+                                  </div>
+                                  <div class="col-md-6 mb-3">
+                                    <label for="problema">Objetivo general</label>
+                                    <textarea [(ngModel)]="proyecto.objetivoGeneral" class="form-control" rows="4" id="general" placeholder="Es el objetivo que se pretende alcanzar"></textarea>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-md-4 mb-3">
+                                    <label for="problema">Descripcion</label>
+                                    <textarea [(ngModel)]="proyecto.descripcion" class="form-control" rows="2" id="especifico" placeholder="Razon por la cual se empezo"></textarea>
+                                  </div>
+                                  <div class="col-md-4 mb-3">
+                                    <label for="problema">Estrategia del proyecto</label>
+                                    <select [(ngModel)]="proyecto.estrategiaProyecto"  class="custom-select d-block w-100" id="country" required>
+                                      <option  value="">Elige...</option>
+                                      <option>Tecnico</option>
+                                      <option>Politico</option>
+                                      <option>Economico</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-md-4 mb-3">
+                                    <label for="problema">Beneficiarios</label>
+                                    <select  [(ngModel)]="proyecto.beneficiarios" class="custom-select d-block w-100" id="country" required>
+                                      <option value="">Elige...</option>
+                                      <option >Adultos</option>
+                                      <option>Niños</option>
+                                      <option>Estudiantes</option>
+                                      <option>Publico en general</option>
+                                    </select>
+                                  </div>
+                                </div>
+
+                                <hr>
+                                <h4 class="mb-3">Aspectos técnicos del proyecto</h4>
+                                <div class="row">
+                                  <label for="tamaño">Tamaño del proyecto</label>
+                                  <div class="col-md-2 mb-3">
+                                      <div class="d-block my-3">
+                                        <div class="custom-control custom-radio">
+                                          <input id="pequeño" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                                          <label class="custom-control-label" for="pequeño">Pequeño</label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                          <input id="mediano" name="paymentMethod" type="radio" class="custom-control-input" required>
+                                          <label class="custom-control-label" for="mediano">Mediano</label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                          <input id="grande" name="paymentMethod" type="radio" class="custom-control-input" required>
+                                          <label class="custom-control-label" for="grande">Grande</label>
+                                        </div>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-4 mb-3">
+                                    <label for="problema">Fecha Inicial</label>
+                                    <input [(ngModel)]="proyecto.fechaComienzo" matInput type="date" placeholder="Fecha de Comienzo"
+                                    type="date">
+                                  </div>
+                                  <div class="col-md-4 mb-3">
+                                    <label for="problema">Fecha Final</label>
+                                    <input [(ngModel)]="proyecto.fechaFinal" matInput type="date" placeholder="Fecha de Comienzo"
+                                    type="date">
+                                  </div>
+                                </div>
+
+                                <hr>
+                                <h4 class="mb-3">Aspectos y evaluación financiera del proyecto</h4>
+
+                                <div class="row">
+                                  <div class="col-md-4 mb-3">
+                                    <label for="presupuesto">Presupuesto del proyecto</label>
+                                    <input [(ngModel)]="proyecto.presupuestoProyecto"  type="number" class="form-control" id="presupuesto" placeholder="" value="0.00" required>
+                                  </div>
+                                  <div class="col-md-4 mb-3">
+                                    <label for="costo">Costo del proyecto</label>
+                                    <input [(ngModel)]="proyecto.costoProyecto" type="number" class="form-control" id="costo" placeholder="" value="0.00" required>
+                                  </div>
+                                </div>
+
+                                <hr class="mb-4">
+                                <button class="btn btn-sark btn-lg btn-block" type="submit">Finalizar</button>
+                              </form>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+</div>
+</div>

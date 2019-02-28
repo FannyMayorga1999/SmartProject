@@ -1,0 +1,38 @@
+<div class="main-content ">
+    <div class="container-fluid">
+        <div class="row">
+            <div class=" col-md-12">
+                    <div class="card">
+                    <div class="card-header card-header bg-dark">
+                        <div class="py-5 text-center">
+                            <h2 class="card-title text-light ">Bienvenido!!</h2>
+                            <p class="card-category text-muted">Crea un nuevo proyecto o supervisa los que ya fueron creados</p>
+                          </div>
+                          <div class="row">
+                              <h4 class="card-title text-light ">Proyectos existentes</h4>
+                              <a  class="card-category text-muted"  style="margin-left: 15px; margin-top: 5px">Crear nuevo proyecto</a>
+                            </div>
+                    </div>
+                    <div class="card-body table-responsive">
+                        <div class="row" *ngFor="let proyecto of proyectos"  >
+                            <div class="col-md-7 order-md-4 mb-5">
+                              <div class="list-group" style="width: 60rem; margin-left: 300px; margin-top: 10px">
+                                <a href="/infoProyecto" class="list-group-item list-group-item-action flex-column align-items-start">
+                                  <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">Proyecto {{proyecto.nombreProyecto}} </h5>
+                                    <span class="badge badge-primary badge-pill">En proceso</span>
+                                  </div>
+                                  <p class="mb-1">{{proyecto.descripcion}}</p>
+                                  <small>Fecha de inicio:{{proyecto.fechaComienzo}}  / Fecha de culminación: {{proyecto.fechaFinal}}</small>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+</div>
+</div>

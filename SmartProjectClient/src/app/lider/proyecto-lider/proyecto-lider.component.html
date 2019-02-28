@@ -1,0 +1,56 @@
+<div class="main-content ">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <div class="card" *ngFor="let proyecto of proyectos" >
+                        <div class="card-header card-header bg-dark">
+                            <h4 class="card-title text-light">{{proyecto.nombre}}</h4>
+                        </div>
+                        <div class="card-body table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <th>Nombre</th>
+                                    <th>Fecha Inicio</th>
+                                    <th>Fecha Fin</th>
+                                    <th>Recursoso</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{proyecto.nombre}}</td>
+                                        <td>{{proyecto.fechaComienzo}}</td>
+                                        <td>{{proyecto.fechaFinal}}</td>
+                                        <td>{{proyecto.costoProyecto}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="card" *ngFor="let proyecto of proyectos">
+                        <div class="card-header card-header bg-dark">
+                            <h4 class="card-title text-light">{{proyecto.nombre}}</h4>
+                        </div>
+                        <div class="card-body table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <th>Nombre</th>
+                                    <th>Fecha Inicio</th>
+                                    <th>Fecha Fin</th>
+                                    <th>Recursoso</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{proyecto.nombre}}</td>
+                                        <td>{{proyecto.fechaComienzo}}</td>
+                                        <td>{{proyecto.fechaFinal}}</td>
+                                        <td>{{proyecto.costoProyecto}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
